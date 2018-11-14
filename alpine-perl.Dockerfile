@@ -1,6 +1,8 @@
-FROM alpine:edge
+FROM alpine:3.8
 MAINTAINER Demiurg (parserpro@gmail.com)
 
-RUN apk update && apk add perl perl-dev curl tar make gcc build-base ca-certificates && update-ca-certificates && rm -fr /var/cache/apk/*
+RUN apk update && apk add perl perl-dev curl tar make gcc build-base && rm -fr /var/cache/apk/*
 
 RUN cd /bin && curl -L https://cpanmin.us/ -o cpanm && chmod +x cpanm
+
+RUN cpanm --no-wget -n App::cpm
