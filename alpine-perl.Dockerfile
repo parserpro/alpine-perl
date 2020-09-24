@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.12
 MAINTAINER Demiurg (parserpro@gmail.com)
 
 RUN apk update && apk add perl perl-dev curl tar make gcc build-base && rm -fr /var/cache/apk/*
